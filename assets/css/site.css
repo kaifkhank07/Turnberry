@@ -119,11 +119,11 @@ h1,h2,h3{
 .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px}
 
 /* ================= hero ================= */
-/* Banner. hero-neighborhood.jpg is upscaled from a 900px original — replace it
-   with the full-resolution photograph when the board supplies one. */
+/* Banner: the Turnberry entrance monument. Upscaled from a 900px original —
+   replace with the full-resolution photograph when the board supplies one. */
 .hero{
   position:relative;min-height:min(96vh,900px);display:flex;align-items:flex-end;
-  background:var(--stone) url('../img/hero-neighborhood.jpg') center 58%/cover no-repeat;color:var(--txt);
+  background:var(--stone) url('../img/hero-turnberry-entrance.jpg') center 62%/cover no-repeat;color:var(--txt);
 }
 .hero::before{
   content:'';position:absolute;inset:0;
@@ -242,6 +242,15 @@ h1,h2,h3{
   display:flex;align-items:center;gap:13px;text-decoration:none;padding:16px 0;
   border-bottom:1px solid var(--line);font-size:16px;font-weight:400;color:var(--ink);transition:color .25s;
 }
+/* a single entry that bundles several documents into one download */
+.doc-col a.multi{align-items:flex-start;flex-wrap:wrap}
+.doc-col a.multi svg{margin-top:3px}
+.doc-col a.multi .t{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.doc-col a.multi .incl{
+  font-size:13px;line-height:1.5;color:var(--muted);font-weight:400;
+}
+.doc-col a.multi .incl b{color:var(--muted);font-weight:600}
+.doc-col a.multi:hover .incl{color:var(--muted)}
 .doc-col a svg{width:17px;height:17px;stroke:var(--bronze);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;transition:stroke .25s}
 .doc-col a:hover{color:var(--bronze-dk)}
 .doc-col a:hover svg{stroke:var(--bronze-dk)}
@@ -1001,3 +1010,28 @@ button.btn{cursor:pointer;font-family:var(--sans)}
 }
 
 
+
+
+/* =========================================================
+   COLLECTION SCHEDULE — Turnberry-specific pickup days
+   ========================================================= */
+.pickup{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);margin:22px 0 18px;
+}
+.pickup > div{background:var(--paper);padding:22px 24px}
+.pickup .day{
+  display:block;font-family:var(--display);font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:30px;font-weight:700;color:var(--bronze-dk);line-height:1;margin-bottom:8px;
+}
+.pickup h4{
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:14px;
+}
+.pickup p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.6}
+.pickup .curb{
+  display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;
+  border-top:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink);
+}
+.pickup .curb svg{width:15px;height:15px;stroke:var(--bronze);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+@media (max-width:640px){.pickup{grid-template-columns:1fr}}
