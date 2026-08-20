@@ -67,9 +67,23 @@ h1,h2,h3{
 /* ================= header ================= */
 .head{
   position:fixed;inset:0 0 auto 0;z-index:80;
-  transition:background .35s,border-color .35s;border-bottom:1px solid transparent;
+  /* Always carries a light background so the wordmark and nav stay readable
+     over photography. It simply deepens on scroll. */
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-dk);
+  transition:background .35s,border-color .35s,box-shadow .35s;
 }
-.head.solid{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom-color:var(--line);box-shadow:0 1px 24px rgba(43,38,33,.06)}
+.head.solid{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom-color:var(--line);box-shadow:0 1px 24px rgba(43,38,33,.07);
+}
+/* nav sits on white, so darken it for full legibility */
+.nav a{color:var(--txt)}
+.nav a.on{color:var(--bronze-dk)}
+.nav a.on::after{transform:scaleX(1)}
+.brand .word{color:var(--ink)}
 .head .wrap{display:flex;align-items:center;gap:24px;min-height:84px}
 
 .brand{display:flex;align-items:center;gap:15px;text-decoration:none;margin-right:auto;color:var(--ink)}
@@ -336,7 +350,7 @@ h1,h2,h3{
   .head{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
   .notice-grid,.doc-cols,.band-grid{grid-template-columns:1fr}
   .notice-grid{gap:44px}
-  .hero{min-height:auto}
+  .hero{min-height:auto;background-image:url('../img/hero-turnberry-entrance-sm.jpg')}
   .hero .wrap{padding-block:168px 62px}
   /* narrow viewports: text spans the full width, so the wash must too */
   .hero::before,.page-head--photo::before,.plate::before{
@@ -1035,3 +1049,13 @@ button.btn{cursor:pointer;font-family:var(--sans)}
 }
 .pickup .curb svg{width:15px;height:15px;stroke:var(--bronze);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 @media (max-width:640px){.pickup{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   TEMPORARILY HIDDEN
+   The gallery is hidden at the board's request. Nothing has been
+   deleted — remove the .is-hidden class from the gallery nav links,
+   the homepage gallery section and the "See the gallery" button to
+   bring it all back, and delete the noindex tag in gallery.html.
+   ========================================================= */
+.is-hidden{display:none !important}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Gallery hidden for now: unlinked from the site and kept out of search
+       results. Delete this robots tag to bring the page back. -->
+  <meta name="robots" content="noindex, nofollow">
+  <!-- PARKED. Renamed from gallery.html to _gallery.html so it is not part of the
+       live site (same underscore convention as _page-template.html). Nothing has
+       been deleted. To bring the gallery back: rename this file to gallery.html,
+       then restore the commented-out links and the <template> blocks in index.html. -->
+  <title>Photo Gallery — Turnberry at World Golf Village</title>
+  <meta name="description"
+    content="View beautiful photographs of the lakes, wildlife, sunsets, and natural landscape of Turnberry at World Golf Village in St. Augustine, Florida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Jost:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
+</head>
+
+<body>
+
+  <!--  header  -->
+  <header class="head solid" id="head">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="word">Turnberry</span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="sub">At World<br>Golf Village</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="news-events.html">News</a>
+        <a href="board-committees.html">Board</a>
+        <a href="index.html#documents">Documents</a>
+        <!-- GALLERY HIDDEN: <a href="gallery.html" class="on is-hidden">Gallery</a> -->
+        <a href="contact-us.html">Contact</a>
+      </nav>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </header>
+
+  <!--  page header  -->
+  <section class="page-head page-head--photo page-head--gallery">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+        <span>Gallery</span>
+      </nav>
+      <h1>Neighborhood gallery</h1>
+      <p class="lede">Lakes, native wildlife, and quiet natural spaces that make Turnberry a beautiful place to live in
+        Northeast Florida.</p>
+    </div>
+  </section>
+
+  <!--  page content  -->
+  <section class="section">
+    <div class="wrap">
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filter rise">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="neighborhood">Neighborhood</button>
+        <button class="filter-btn" data-filter="scenes">Turnberry Scenes</button>
+        <button class="filter-btn" data-filter="st-augustine-fla">St. Augustine, FLA</button>
+        <button class="filter-btn" data-filter="bloom">Turnberry in Bloom</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-photos rise">
+        <!-- Dynamically populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!--  lightbox  -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10216;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#10217;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-caption-wrapper">
+        <div id="lightboxTitle" class="lightbox-title"></div>
+        <div id="lightboxMeta" class="lightbox-meta"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--  footer  -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="word">Turnberry</span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="sub">At World<br>Golf Village</span>
+          </a>
+          <p class="blurb">A homeowners association in St. Johns County, Florida — minutes from historic St. Augustine
+            and a short drive from Jacksonville.</p>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="news-events.html">News &amp; events</a>
+          <a href="board-committees.html">Board &amp; committees</a>
+          <a href="index.html#documents">Documents &amp; forms</a>
+          <!-- GALLERY HIDDEN: <a href="gallery.html" class="is-hidden">Photo gallery</a> -->
+        </div>
+        <div>
+          <h4>Documents</h4>
+          <a href="assets/pdf/TBY%20By-laws.pdf">By-laws</a>
+          <a href="c-rs.html">Covenants &amp; restrictions</a>
+          <a href="assets/pdf/ARB%20GUIDELINES%2011-2024.pdf">ARB guidelines</a>
+          <a href="financial-information.html">Financial information</a>
+        </div>
+        <div>
+          <h4>Residents</h4>
+          <a href="pool-guidelines.html">Pool guidelines</a>
+          <a href="https://www.recyclestjohns.com">Garbage collection</a>
+          <a href="assets/pdf/Turnberry%20Newsletter%2008-2026.pdf">Newsletter</a>
+          <a href="https://secure.maymgt.com/forms/estoppel">Estoppel request</a>
+        </div>
+      </div>
+      <div class="foot-base">
+        <span>© 2026 Turnberry Homeowners Association</span>
+        <span>Managed by MAY Management Services · St. Augustine, Florida</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=3"></script>
+  <script>
+    (function () {
+      // Gallery Photos Data Array
+      var photos = [
+        {
+          category: "neighborhood",
+          src: "assets/img/Image01.jpg",
+          title: "Turnberry Entrance",
+          meta: "Neighborhood · Local Photo"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image02.jpg",
+          title: "Turnberry Streetscape",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image03.jpg",
+          title: "Quiet Lake Boardwalk",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image04.jpg",
+          title: "Lake Ibis",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image05.jpg",
+          title: "Great Blue Heron in Flight",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image06.jpg",
+          title: "Morning Mist",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image07.jpg",
+          title: "Lake Sunset",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image08.jpg",
+          title: "White Egret in the Shallows",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image09.jpg",
+          title: "Lake Fog at Sunrise",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image10.jpg",
+          title: "Great Blue Heron",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image11.jpg",
+          title: "Woodland Mist",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image12.jpg",
+          title: "Warm Evening Sun",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image13.jpg",
+          title: "Historic St. Augustine",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image14.jpg",
+          title: "Castillo de San Marcos",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image15.jpg",
+          title: "St. Augustine Street Scene",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image16.jpg",
+          title: "Turnberry in Bloom",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image17.jpg",
+          title: "Morning Dew on the Reeds",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image18.jpg",
+          title: "Lush Wildflowers",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image19.jpg",
+          title: "Azaleas in Spring",
+          meta: "Neighborhood"
+        },
+        {
+          category: "neighborhood",
+          src: "assets/img/Image20.jpg",
+          title: "Azaleas in Spring",
+          meta: "Neighborhood"
+        },
+        {
+          category: "scenes",
+          src: "assets/img/hero-lake-sunset.jpg",
+          title: "Lake Sunset",
+          meta: "Scenes"
+        },
+        {
+          category: "scenes",
+          src: "assets/img/heron-flight.jpg",
+          title: "Great Blue Heron in Flight",
+          meta: "Scenes"
+        },
+        {
+          category: "scenes",
+          src: "assets/img/lake-ibis.jpg",
+          title: "Lake Ibis",
+          meta: "Scenes"
+        },
+        {
+          category: "scenes",
+          src: "assets/img/morning-mist.jpg",
+          title: "Morning Mist",
+          meta: "Scenes"
+        },
+        // {
+        //   category: "scenes",
+        //   src: "assets/img/Image27.jpg",
+        //   title: "St. Augustine Street Scene",
+        //   meta: "Scenes"
+        // },
+        // {
+        //   category: "scenes",
+        //   src: "assets/img/Image28.jpg",
+        //   title: "Turnberry in Bloom",
+        //   meta: "Scenes"
+        // },
+        // {
+        //   category: "scenes",
+        //   src: "assets/img/Image29.jpg",
+        //   title: "Morning Dew on the Reeds",
+        //   meta: "Scenes"
+        // },
+        // {
+        //   category: "scenes",
+        //   src: "assets/img/Image30.jpg",
+        //   title: "Lush Wildflowers",
+        //   meta: "Scenes"
+        // },
+        // {
+        //   category: "scenes",
+        //   src: "assets/img/Image31.jpg",
+        //   title: "Azaleas in Spring",
+        //   meta: "Scenes"
+        // },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image23.jpg",
+          title: "Woodland Mist",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image24.jpg",
+          title: "Warm Evening Sun",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image25.jpg",
+          title: "Historic St. Augustine",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image26.jpg",
+          title: "Castillo de San Marcos",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image27.jpg",
+          title: "St. Augustine Street Scene",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image29.jpg",
+          title: "Morning Dew on the Reeds",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image30.jpg",
+          title: "Lush Wildflowers",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image36.jpg",
+          title: "Morning Dew on the Reeds",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image38.jpg",
+          title: "Lush Wildflowers",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "st-augustine-fla",
+          src: "assets/img/Image31.jpg",
+          title: "Azaleas in Spring",
+          meta: "St. Augustine, FLA"
+        },
+        {
+          category: "bloom",
+          src: "assets/img/Image32.jpg",
+          title: "Azaleas in Spring",
+          meta: "Bloom"
+        },
+        {
+          category: "bloom",
+          src: "assets/img/Image33.jpg",
+          title: "Azaleas in Spring",
+          meta: "Bloom"
+        },
+        {
+          category: "bloom",
+          src: "assets/img/Image34.jpg",
+          title: "Azaleas in Spring",
+          meta: "Bloom"
+        },
+        {
+          category: "bloom",
+          src: "assets/img/Image35.jpg",
+          title: "Azaleas in Spring",
+          meta: "Bloom"
+        }
+      ];
+
+      var categoryLabels = {
+        "neighborhood": "Neighborhood",
+        "scenes": "Turnberry Scenes",
+        "st-augustine-fla": "St. Augustine, FLA",
+        "bloom": "Turnberry in Bloom"
+      };
+
+      // Dynamically render photos
+      var galleryPhotos = document.querySelector('.gallery-photos');
+      if (galleryPhotos) {
+        galleryPhotos.innerHTML = photos.map(function (photo) {
+          var tagLabel = categoryLabels[photo.category] || photo.category;
+          return '<div class="photo-item" data-category="' + photo.category + '" data-src="' + photo.src + '" data-title="' + photo.title + '" data-meta="' + photo.meta + '">' +
+            '<img src="' + photo.src + '" alt="' + photo.title + '">' +
+            '<div class="photo-details">' +
+            '<span class="cat-tag">' + tagLabel + '</span>' +
+            '<h3>' + photo.title + '</h3>' +
+            '</div>' +
+            '</div>';
+        }).join('');
+      }
+
+      // --- Filtering Logic ---
+      var filterButtons = document.querySelectorAll('.filter-btn');
+      var photoItems = document.querySelectorAll('.photo-item');
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          // Toggle active button
+          filterButtons.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var filterValue = btn.getAttribute('data-filter');
+
+          photoItems.forEach(function (item) {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+              // Trigger scroll reveal animation again
+              setTimeout(function () {
+                item.classList.add('in');
+              }, 30);
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Handle initial filter via query parameter
+      var urlParams = new URLSearchParams(window.location.search);
+      var initialFilter = urlParams.get('filter');
+      if (initialFilter) {
+        var matchingBtn = document.querySelector('.filter-btn[data-filter="' + initialFilter + '"]');
+        if (matchingBtn) {
+          matchingBtn.click();
+        }
+      }
+
+      // --- Lightbox Logic ---
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      var lightboxTitle = document.getElementById('lightboxTitle');
+      var lightboxMeta = document.getElementById('lightboxMeta');
+      var closeBtn = document.getElementById('lightboxClose');
+      var prevBtn = document.getElementById('lightboxPrev');
+      var nextBtn = document.getElementById('lightboxNext');
+
+      var currentPhotos = [];
+      var currentIndex = -1;
+
+      function getVisiblePhotos() {
+        return Array.prototype.filter.call(photoItems, function (item) {
+          return item.style.display !== 'none';
+        });
+      }
+
+      function openLightbox(index) {
+        currentPhotos = getVisiblePhotos();
+        currentIndex = index;
+        if (currentIndex < 0 || currentIndex >= currentPhotos.length) return;
+
+        var photo = currentPhotos[currentIndex];
+        var src = photo.getAttribute('data-src');
+        var title = photo.getAttribute('data-title');
+        var meta = photo.getAttribute('data-meta') || '';
+        var alt = photo.querySelector('img').getAttribute('alt') || '';
+
+        lightboxImg.style.opacity = '0';
+        lightboxImg.style.transform = 'scale(0.97)';
+
+        lightbox.classList.add('show');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+
+        // Load image source
+        lightboxImg.setAttribute('src', src);
+        lightboxImg.setAttribute('alt', alt);
+        lightboxTitle.textContent = title;
+        lightboxMeta.textContent = meta + ' (' + (currentIndex + 1) + ' of ' + currentPhotos.length + ')';
+
+        // Animate transition
+        setTimeout(function () {
+          lightboxImg.style.opacity = '1';
+          lightboxImg.style.transform = 'scale(1)';
+        }, 50);
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(function () {
+          lightboxImg.setAttribute('src', '');
+        }, 350);
+      }
+
+      function showPrev() {
+        if (currentIndex > 0) {
+          openLightbox(currentIndex - 1);
+        } else {
+          openLightbox(currentPhotos.length - 1); // Wrap around to end
+        }
+      }
+
+      // Pre-load logic for next/prev images to ensure snappy feel
+      function preloadImage(url) {
+        if (url && url.indexOf('http') === 0 || url.indexOf('assets') === 0) {
+          var tempImg = new Image();
+          tempImg.src = url;
+        }
+      }
+
+      function showNext() {
+        if (currentIndex < currentPhotos.length - 1) {
+          openLightbox(currentIndex + 1);
+        } else {
+          openLightbox(0); // Wrap around to beginning
+        }
+      }
+
+      // Attach click events to items
+      photoItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          var visiblePhotos = getVisiblePhotos();
+          var idx = visiblePhotos.indexOf(item);
+          openLightbox(idx);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        showPrev();
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        showNext();
+      });
+
+      // Close lightbox on clicking backdrop
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox-content')) {
+          closeLightbox();
+        }
+      });
+
+      // Keyboard support
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('show')) return;
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          showPrev();
+        } else if (e.key === 'ArrowRight') {
+          showNext();
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

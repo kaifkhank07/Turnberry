@@ -10,12 +10,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Jost:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
 </head>
 
 <body>
 
-  <!-- ============ header ============ -->
+  <!--  header  -->
   <header class="head" id="head">
     <div class="wrap">
       <a class="brand" href="#top">
@@ -28,14 +28,14 @@
         <a href="news-events.html">News</a>
         <a href="board-committees.html">Board</a>
         <a href="index.html#documents">Documents</a>
-        <a href="index.html#gallery">Gallery</a>
+        <!-- GALLERY HIDDEN: <a href="index.html#gallery" class="is-hidden">Gallery</a> -->
         <a href="contact-us.html">Contact</a>
       </nav>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     </div>
   </header>
 
-  <!-- ============ hero ============ -->
+  <!--  hero  -->
   <section class="hero" id="top">
     <div class="wrap">
       <div class="hero-inner rise">
@@ -83,7 +83,7 @@
     </div>
   </section>
 
-  <!-- ============ quick access ============ -->
+  <!--  quick access  -->
   <section class="quick">
     <div class="wrap">
       <a class="qitem rise" href="news-events.html">
@@ -134,7 +134,7 @@
     </div>
   </section>
 
-  <!-- ============ notices ============ -->
+  <!--  notices  -->
   <section class="section" id="notices">
     <div class="wrap">
       <div class="sec-head rise">
@@ -226,7 +226,7 @@
     </div>
   </section>
 
-  <!-- ============ photo interstitial ============ -->
+  <!--  photo interstitial  -->
   <section class="plate plate--mist on-dark">
     <div class="wrap">
       <div class="plate-in rise">
@@ -238,21 +238,22 @@
           The lakes
         </span>
         <h2>Sunrise on the water, most mornings.</h2>
-        <p>Herons, ibis, and geese share the ponds that run through the neighborhood. Residents photograph them
-          year-round — the gallery is theirs.</p>
-        <div class="cta-row">
+        <p>Herons, ibis, and geese share the ponds that run through the neighborhood, and residents photograph them
+          year-round.</p>
+        <!-- GALLERY HIDDEN: promo button preserved below -->
+        <template id="gallery-cta-hidden"><div class="cta-row is-hidden">
           <a class="btn btn--light" href="#gallery">
             See the gallery
             <svg viewBox="0 0 24 24">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
-        </div>
+        </div></template>
       </div>
     </div>
   </section>
 
-  <!-- ============ documents ============ -->
+  <!--  documents  -->
   <section class="section docs" id="documents">
     <div class="wrap">
       <div class="sec-head rise">
@@ -351,8 +352,12 @@
     </div>
   </section>
 
-  <!-- ============ gallery ============ -->
-  <section class="section gallery on-dark" id="gallery">
+  <!--  gallery  -->
+  <!-- GALLERY HIDDEN. The whole section is preserved inside this template so
+       nothing is lost. It is not rendered and its images are not downloaded.
+       To restore: delete the template tags below and remove is-hidden. -->
+  <template id="gallery-section-hidden">
+    <section class="section gallery on-dark is-hidden" id="gallery">
     <div class="wrap">
       <div class="sec-head rise">
         <div>
@@ -411,8 +416,9 @@
       </div>
     </div>
   </section>
+  </template>
 
-  <!-- ============ board + contact ============ -->
+  <!--  board + contact  -->
   <section class="section band" id="reach">
     <div class="wrap">
       <div class="band-grid">
@@ -477,7 +483,7 @@
     </div>
   </section>
 
-  <!-- ============ footer ============ -->
+  <!--  footer  -->
   <footer class="foot">
     <div class="wrap">
       <div class="foot-grid">
@@ -495,7 +501,7 @@
           <a href="news-events.html">News &amp; events</a>
           <a href="board-committees.html">Board &amp; committees</a>
           <a href="index.html#documents">Documents &amp; forms</a>
-          <a href="#gallery">Photo gallery</a>
+          <!-- GALLERY HIDDEN: <a href="#gallery" class="is-hidden">Photo gallery</a> -->
         </div>
         <div>
           <h4>Documents</h4>
@@ -519,7 +525,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js?v=3"></script>
 </body>
 
 </html>
